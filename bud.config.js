@@ -47,8 +47,12 @@ export default async (app) => {
    */
   app.wpjson
     .setSettings({
+      layout: {
+  			contentSize: "620px",
+			  wideSize: "1280px"
+		  },
       background: {
-        backgroundImage: true,
+        backgroundImage: false,
       },
       color: {
         custom: false,
@@ -73,8 +77,5 @@ export default async (app) => {
       typography: {
         customFontSize: false,
       },
-    })
-    .useTailwindColors()
-    .useTailwindFontFamily()
-    .useTailwindFontSize();
+    }).enable();
 };
