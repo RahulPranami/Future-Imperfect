@@ -17,16 +17,11 @@ use function Roots\asset;
 add_action('wp_enqueue_scripts', function () {
     bundle('app')->enqueue();
 
-    $browser = asset('scripts/browser.min.js');
-    $breakpoints = asset('scripts/breakpoints.min.js');
-    $util = asset('scripts/util.js');
-    $main = asset('scripts/main.js');
-
     wp_enqueue_script('jquery');
-    wp_enqueue_script('browser', $browser->uri(), [], false, true);
-    wp_enqueue_script('breakpoints', $breakpoints->uri(), [], false, true);
-    wp_enqueue_script('util', $util->uri(), [], false, true);
-    wp_enqueue_script('main', $main->uri(), [], false, true);
+    wp_enqueue_script('browser', asset('scripts/browser.min.js')->uri(), [], false, true);
+    wp_enqueue_script('breakpoints', asset('scripts/breakpoints.min.js')->uri(), [], false, true);
+    wp_enqueue_script('util', asset('scripts/util.js')->uri(), [], false, true);
+    wp_enqueue_script('main', asset('scripts/main.js')->uri(), [], false, true);
 }, 100);
 
 /**
