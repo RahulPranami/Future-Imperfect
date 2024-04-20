@@ -26,18 +26,6 @@ export default async (app) => {
   app.setPublicPath('/wp-content/themes/future-imperfect/public');
 
   /**
-   * Development server settings
-   *
-   * @see {@link https://bud.js.org/reference/bud.setUrl}
-   * @see {@link https://bud.js.org/reference/bud.setProxyUrl}
-   * @see {@link https://bud.js.org/reference/bud.watch}
-   */
-  app
-    .setUrl('http://localhost:3000')
-    .setProxyUrl('http://example.test')
-    .watch(['resources/views', 'app']);
-
-  /**
    * Generate WordPress `theme.json`
    *
    * @note This overwrites `theme.json` on every build.
@@ -78,4 +66,9 @@ export default async (app) => {
         customFontSize: false,
       },
     }).enable();
+
+  app.minimize();
+  app.splitChunks()
+  app.hash();
+  app.persist();
 };

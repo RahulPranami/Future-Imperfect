@@ -5,9 +5,9 @@
         {!! $title !!}
       </h2>
 
-      <ol class="comment-list">
+      <ul class="comment-list">
         {!! $responses !!}
-      </ol>
+      </ul>
 
       @if ($paginated)
         <nav aria-label="Comment">

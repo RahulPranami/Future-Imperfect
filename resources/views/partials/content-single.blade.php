@@ -1,23 +1,33 @@
-<article @php(post_class('h-entry'))>
-  <header>
-    <h1 class="p-name">
-      {!! $title !!}
-    </h1>
+<article @php(post_class('h-entry post'))>
+    <header>
+        <div class="title">
+            <h2>{!! $title !!}</h2>
+            {{-- <p>Lorem ipsum dolor amet nullam consequat etiam feugiat</p> --}}
+        </div>
 
-    @include('partials.entry-meta')
-  </header>
+        @include('partials.entry-meta')
+    </header>
 
-  <div class="e-content">
+    @if (has_post_thumbnail())
+        <span class="image featured">
+            {!! the_post_thumbnail('full') !!}
+        </span>
+    @endif
+
     @php(the_content())
-  </div>
 
-  @if ($pagination)
     <footer>
-      <nav class="page-nav" aria-label="Page">
-        {!! $pagination !!}
-      </nav>
+        @include('partials.stats-meta')
     </footer>
-  @endif
 
-  @php(comments_template())
+    <!-- Pagination -->
+    <ul class="actions pagination">
+        @foreach ($navigation as $item)
+            <li> {!! $item !!} </li>
+        @endforeach
+    </ul>
+
+    <hr />
+
+    @php(comments_template())
 </article>

@@ -1,0 +1,55 @@
+#comments {
+  .comment-list {
+    list-style: none;
+  }
+  .logged-in-as {
+    a,
+    .required-field-message {
+      margin-left: 15px;
+    }
+  }
+
+  article {
+    border: solid 1px _palette(border);
+    padding: 15px;
+
+    footer.comment-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px;
+      border-bottom: solid 1px _palette(border);
+
+      .comment-author {
+        display: flex;
+        align-items: center;
+
+        b {
+          margin-right: 20px;
+          margin-left: 20px;
+        }
+      }
+      .comment-metadata {
+        display: flex;
+        align-items: center;
+
+        .edit-link {
+          margin-left: 20px;
+        }
+      }
+    }
+
+    .comment-content {
+      padding: 20px 20px 0 20px;
+    }
+
+    .reply {
+      margin: 0 20px 20px;
+    }
+  }
+}
+
+#respond {
+  border-top: solid 1px _palette(border);
+  padding-top: 20px;
+}
