@@ -16,14 +16,14 @@ export default async (app) => {
   app
     .entry('app', ['@scripts/app', '@styles/app'])
     .entry('editor', ['@scripts/editor', '@styles/editor'])
-    .assets(['images']);
+    .assets(['images','fonts']);
 
   /**
    * Set public path
    *
    * @see {@link https://bud.js.org/reference/bud.setPublicPath}
    */
-  app.setPublicPath('/app/themes/sage/public/');
+  app.setPublicPath('/wp-content/themes/future-imperfect/public');
 
   /**
    * Development server settings
